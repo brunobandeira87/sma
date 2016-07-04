@@ -19,7 +19,7 @@ MAS bbcsfmrb {
 					"cow(key,_,_)",
 					"target(_,_)"
 				) #12;
-			cowBoy cowboy.asl
+			cowboy cowboy.asl
 				[host="localhost", port=12300, teamid="bbcsfmrb", username="b#nid", password="1"]
 				agentClass		agent.CowboyAgent
 		   		agentArchClass	arch.CowboyArch
