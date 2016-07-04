@@ -1,0 +1,59 @@
+MAS bbcsfmrb {
+   infrastructure: Centralised
+
+   agents:
+           exp explorer.asl
+           		[host="localhost", port=12300, teamid="bbcsfmrb", username="b#nid", password="1"]
+		   		agentClass		agent.ExploradorAgent
+		   		agentArchClass	arch.ExploradorArch
+		   		beliefBaseClass	agent.ExploradorBeliefBase( 
+					"gsize(_,_)",
+					"steps(_)",
+					"step(_)",
+					"opponent(_,_)",
+					"step(_)",
+					"corral(_,_,_,_)",
+					"pos(_,_,_)",
+					"ally_pos(key,_,_)",
+					"opponent_pos(key,_,_)",
+					"cow(key,_,_)",
+					"target(_,_)"
+				) #12;
+			cowBoy cowboy.asl
+				[host="localhost", port=12300, teamid="bbcsfmrb", username="b#nid", password="1"]
+				agentClass		agent.CowboyAgent
+		   		agentArchClass	arch.CowboyArch
+		   		beliefBaseClass	agent.CowboyBeliefBase( 
+					"gsize(_,_)",
+					"steps(_)",
+					"step(_)",
+					"opponent(_,_)",
+					"step(_)",
+					"corral(_,_,_,_)",
+					"pos(_,_,_)",
+					"ally_pos(key,_,_)",
+					"opponent_pos(key,_,_)",
+					"cow(key,_,_)",
+					"target(_,_)"
+		   		) #7;
+		   								
+			doorman doorman.asl
+				[host="localhost", port=12300, teamid="bbcsfmrb", username="b#nid", password="1"]
+				agentClass		agent.DoormanAgent
+		   		agentArchClass	arch.DoormanArch
+		   		beliefBaseClass	agent.DoormanBeliefBase( 
+					"gsize(_,_)",
+					"steps(_)",
+					"step(_)",
+					"opponent(_,_)",
+					"step(_)",
+					"corral(_,_,_,_)",
+					"pos(_,_,_)",
+					"ally_pos(key,_,_)",
+					"opponent_pos(key,_,_)",
+					"cow(key,_,_)",
+					"target(_,_)"
+				) #1;
+
+   aslSourcePath: "asl_src";
+}
